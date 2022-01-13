@@ -1,8 +1,8 @@
 # mongoDb
 
-use productdb
+use productdb  
 
-db.createCollection('product')
+db.createCollection('product')  
 
 db.product.insert([
     {
@@ -180,42 +180,42 @@ db.product.insert([
         "product_material": "Cotton",
         "product_color": "indigo"
     }
-])
+])  
+
+  
+
+1. Find all the information about each products  
+Ans : db.product.find().pretty()  
 
 
-
-1. Find all the information about each products
-Ans : db.product.find().pretty()
-
-
-2. Find the product price which are between 400 to 800
-Ans : db.product.find({"product_price":{$gt:400,$lt:800}}).pretty()
+2. Find the product price which are between 400 to 800  
+Ans : db.product.find({"product_price":{$gt:400,$lt:800}}).pretty()  
 
 
-3. Find the product price which are not between 400 to 600
-Ans : db.product.find({"product_price": {$not:{$gt:400,$lt:600}}}).pretty()
+3. Find the product price which are not between 400 to 600  
+Ans : db.product.find({"product_price": {$not:{$gt:400,$lt:600}}}).pretty()  
 
 
-4. List the four product which are grater than 500 in price 
-Ans: db.product.find({product_price:{$gt:500}}).limit(4).pretty()
+4. List the four product which are grater than 500 in price  
+Ans: db.product.find({product_price:{$gt:500}}).limit(4).pretty()  
 
-5. Find the product name and product material of each products
-Ans: db.product.find({},{product_name:true,product_price:true}).pretty()
+5. Find the product name and product material of each products  
+Ans: db.product.find({},{product_name:true,product_price:true}).pretty()  
 
-6. Find the product with a row id of 10
-Ans: db.product.find({id:"10"}).pretty()
+6. Find the product with a row id of 10  
+Ans: db.product.find({id:"10"}).pretty()  
 
-7. Find only the product name and product material
-Ans: db.product.find({},{product_name:true,product_material:true}).pretty()
+7. Find only the product name and product material  
+Ans: db.product.find({},{product_name:true,product_material:true}).pretty()  
 
-8. Find all products which contain the value of soft in product material
-Ans: db.product.find({"product_material" : "Soft"}).pretty()
+8. Find all products which contain the value of soft in product material  
+Ans: db.product.find({"product_material" : "Soft"}).pretty()  
 
-9. Find products which contain product color indigo  and product price 492.00
-Ans: db.product.find({$and{"product_color" : "indigo","product_price" : 492}}).pretty()
+9. Find products which contain product color indigo  and product price 492.00  
+Ans: db.product.find({$and{"product_color" : "indigo","product_price" : 492}}).pretty()  
 
-10. Delete the products which product price value are same
-Ans: db.product.ensureIndex({product_name:1},{unique:true,dropDups:true})  --- Works on mongo V2 and before
+10. Delete the products which product price value are same  
+Ans: db.product.ensureIndex({product_name:1},{unique:true,dropDups:true})  --- Works on mongo V2 and before  
 
 
 
